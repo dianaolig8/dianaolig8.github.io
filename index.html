@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
     <title>Diana Olivan | Business Analytics</title>
 
     <style>
+
         :root {
-            --navy: #20283A;
-            --coral: #D97967;
+            --dark: #20283A;
+            --accent: #D97967;
             --cream: #FAF7F2;
-            --lavender: #E9E5F0;
+            --light: #F0EBE5;
             --muted: #737887;
             --white: #FFFFFF;
         }
@@ -29,9 +31,10 @@
         body {
             font-family: Arial, sans-serif;
             background: var(--cream);
-            color: var(--navy);
+            color: var(--dark);
             line-height: 1.6;
         }
+
 
         /* NAVIGATION */
 
@@ -39,207 +42,343 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 8%;
+
+            padding: 25px 7%;
+
+            position: sticky;
+            top: 0;
+
+            background: rgba(250, 247, 242, 0.95);
+
+            backdrop-filter: blur(10px);
+
+            z-index: 100;
         }
 
         .logo {
-            font-size: 20px;
+            font-size: 21px;
             font-weight: bold;
         }
 
         .logo span {
-            color: var(--coral);
+            color: var(--accent);
         }
 
         nav ul {
             display: flex;
-            gap: 28px;
+            gap: 30px;
             list-style: none;
         }
 
         nav a {
-            color: var(--navy);
             text-decoration: none;
+            color: var(--dark);
             font-size: 14px;
         }
 
         nav a:hover {
-            color: var(--coral);
+            color: var(--accent);
         }
+
+
+        /* GENERAL */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 100px 7%;
+        }
+
+        .label {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 35px;
+        }
+
 
         /* HERO */
 
         .hero {
-            min-height: 72vh;
+            min-height: 82vh;
+
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 70px 8%;
-            gap: 60px;
+
+            position: relative;
         }
 
-        .hero-text {
-            max-width: 650px;
+        .hero-content {
+            max-width: 800px;
         }
 
-        .eyebrow {
-            color: var(--coral);
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
+        .hero h1 {
+            font-size: clamp(55px, 9vw, 105px);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 30px;
         }
 
-        h1 {
-            font-size: 70px;
-            line-height: 1;
-            margin-bottom: 25px;
+        .hero h1 span {
+            color: var(--accent);
         }
 
         .hero h2 {
-            font-size: 27px;
+            font-size: 25px;
             font-weight: normal;
-            color: #3D4659;
-            margin-bottom: 22px;
+            max-width: 650px;
+            margin-bottom: 20px;
         }
 
         .hero-description {
             color: var(--muted);
+            max-width: 600px;
             font-size: 17px;
-            max-width: 580px;
             margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
         }
 
         .button {
             display: inline-block;
-            background: var(--coral);
-            color: white;
-            text-decoration: none;
+
             padding: 12px 22px;
-            border-radius: 6px;
+
+            border-radius: 5px;
+
+            text-decoration: none;
+
             font-size: 14px;
-            margin-right: 10px;
+
+            transition: 0.2s;
         }
 
-        .button:hover {
-            opacity: 0.85;
+        .primary {
+            background: var(--accent);
+            color: white;
         }
 
-        .button-outline {
-            background: transparent;
-            border: 1px solid var(--navy);
-            color: var(--navy);
+        .primary:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
         }
 
-        /* PHOTO PLACEHOLDER */
-
-        .photo {
-            width: 270px;
-            height: 330px;
-            background: var(--lavender);
-            border-radius: 140px 140px 20px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--muted);
-            font-size: 14px;
-            flex-shrink: 0;
+        .secondary {
+            border: 1px solid var(--dark);
+            color: var(--dark);
         }
 
-        /* SECTIONS */
-
-        section {
-            padding: 80px 8%;
+        .secondary:hover {
+            background: var(--dark);
+            color: white;
         }
 
-        .section-title {
+
+        /* INTRO / STATS */
+
+        .intro {
+            background: var(--dark);
+            color: white;
+
+            max-width: none;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+
+            gap: 60px;
+
+            padding-left: 12%;
+            padding-right: 12%;
+        }
+
+        .intro-text {
+            font-size: 25px;
+            line-height: 1.4;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .stat-number {
             font-size: 32px;
-            margin-bottom: 25px;
+            color: var(--accent);
+            font-weight: bold;
         }
 
-        .section-title span {
-            color: var(--coral);
+        .stat-label {
+            color: #D4D7DE;
+            font-size: 13px;
         }
+
+
+        /* WORK */
+
+        .work {
+            background: var(--cream);
+        }
+
+        .project {
+            display: grid;
+
+            grid-template-columns: 80px 1fr 180px;
+
+            gap: 25px;
+
+            align-items: start;
+
+            padding: 30px 0;
+
+            border-top: 1px solid #DCD6CF;
+        }
+
+        .project:last-child {
+            border-bottom: 1px solid #DCD6CF;
+        }
+
+        .project-number {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .project h3 {
+            font-size: 25px;
+            margin-bottom: 6px;
+        }
+
+        .project-description {
+            color: var(--muted);
+            max-width: 600px;
+        }
+
+        .project-tech {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: bold;
+            text-align: right;
+        }
+
 
         /* ABOUT */
 
         .about {
             background: var(--white);
+            max-width: none;
+
+            padding-left: 12%;
+            padding-right: 12%;
         }
 
-        .about-text {
+        .about-content {
             max-width: 750px;
+
+            font-size: 19px;
+
             color: var(--muted);
-            font-size: 17px;
         }
 
-        /* PROJECTS */
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+        .about-content p {
+            margin-bottom: 20px;
         }
 
-        .project {
+
+        /* TOOLBOX */
+
+        .toolbox {
+            background: var(--light);
+            max-width: none;
+
+            padding-left: 12%;
+            padding-right: 12%;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 9px 15px;
+
             background: var(--white);
-            padding: 28px;
-            border-radius: 10px;
-            border: 1px solid #E8E2DC;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            color: var(--dark);
         }
 
-        .project-number {
-            color: var(--coral);
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .project h3 {
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            color: var(--muted);
-            font-size: 15px;
-        }
 
         /* CONTACT */
 
         .contact {
             text-align: center;
-            background: var(--lavender);
+            max-width: 800px;
+        }
+
+        .contact h2 {
+            font-size: 50px;
+            margin-bottom: 15px;
         }
 
         .contact p {
             color: var(--muted);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .contact a {
-            color: var(--navy);
-            font-weight: bold;
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .contact-links a {
+            color: var(--dark);
             text-decoration: none;
-            margin: 0 12px;
+            font-weight: bold;
         }
 
-        .contact a:hover {
-            color: var(--coral);
+        .contact-links a:hover {
+            color: var(--accent);
         }
+
 
         /* FOOTER */
 
         footer {
             text-align: center;
+
             padding: 25px;
-            font-size: 13px;
-            color: var(--muted);
-            background: var(--cream);
+
+            background: var(--dark);
+
+            color: #C9CDD5;
+
+            font-size: 12px;
         }
+
 
         /* MOBILE */
 
-        @media (max-width: 750px) {
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 20px 6%;
+            }
 
             nav ul {
                 gap: 12px;
@@ -249,191 +388,408 @@
                 font-size: 12px;
             }
 
-            .hero {
-                flex-direction: column;
-                align-items: flex-start;
-                padding-top: 50px;
+            section {
+                padding: 75px 7%;
             }
 
-            h1 {
-                font-size: 52px;
+            .hero h1 {
+                font-size: 60px;
+                letter-spacing: -2px;
             }
 
-            .photo {
-                width: 220px;
-                height: 270px;
+            .hero h2 {
+                font-size: 21px;
             }
 
-            .projects {
+            .intro {
                 grid-template-columns: 1fr;
+
+                padding-left: 7%;
+                padding-right: 7%;
             }
+
+            .project {
+                grid-template-columns: 45px 1fr;
+            }
+
+            .project-tech {
+                grid-column: 2;
+                text-align: left;
+            }
+
+            .about,
+            .toolbox {
+                padding-left: 7%;
+                padding-right: 7%;
+            }
+
+            .contact h2 {
+                font-size: 40px;
+            }
+
         }
+
     </style>
+
 </head>
 
+
 <body>
+
 
     <!-- NAVIGATION -->
 
     <nav>
+
         <div class="logo">
             Diana<span>.</span>
         </div>
 
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#work">Work</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
         </ul>
+
     </nav>
+
 
 
     <!-- HERO -->
 
     <section class="hero">
 
-        <div class="hero-text">
+        <div class="hero-content">
 
-            <p class="eyebrow">
+            <p class="label">
                 BUSINESS ANALYTICS · STRATEGY · TECHNOLOGY
             </p>
 
             <h1>
-                Diana<br>Olivan
+                Diana<br>
+                <span>Olivan.</span>
             </h1>
 
             <h2>
-                Where business strategy meets data.
+                I connect business strategy, technology,
+                and analytics to solve complex problems.
             </h2>
 
             <p class="hero-description">
-                Business professional with a background in strategic management,
-                finance, entrepreneurship, and technology, currently pursuing a
-                Master of Management in Analytics at McGill University.
+                Business professional with a background in strategic
+                management, finance, entrepreneurship, and technology,
+                currently pursuing a Master of Management in Analytics
+                at McGill University.
             </p>
 
-            <a href="#work" class="button">
-                View my work
-            </a>
+            <div class="buttons">
 
-            <a href="https://www.linkedin.com/in/dianaolivan/"
-               target="_blank"
-               class="button button-outline">
-                LinkedIn
-            </a>
+                <a href="#work" class="button primary">
+                    View my work
+                </a>
 
-        </div>
+                <a
+                    href="https://www.linkedin.com/in/dianaolivan/"
+                    target="_blank"
+                    class="button secondary"
+                >
+                    LinkedIn ↗
+                </a>
 
+            </div>
 
-        <div class="photo">
-            Your photo
         </div>
 
     </section>
+
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <div class="intro-text">
+
+            I enjoy working where <strong>business,
+            technology, and data</strong> overlap —
+            turning ideas and problems into practical solutions.
+
+        </div>
+
+
+        <div class="stats">
+
+            <div>
+
+                <div class="stat-number">
+                    5+
+                </div>
+
+                <div class="stat-label">
+                    Years of experience
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="stat-number">
+                    3
+                </div>
+
+                <div class="stat-label">
+                    Technology projects
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="stat-number">
+                    MMA
+                </div>
+
+                <div class="stat-label">
+                    McGill University
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="stat-number">
+                    3
+                </div>
+
+                <div class="stat-label">
+                    Core areas
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WORK -->
+
+    <section id="work" class="work">
+
+        <p class="label">
+            SELECTED WORK
+        </p>
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    VotoMétrica
+                </h3>
+
+                <p class="project-description">
+                    Electoral data analytics project focused on
+                    transforming data into meaningful insights.
+                </p>
+
+            </div>
+
+            <div class="project-tech">
+                Python · Data Analysis
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    WFacturas
+                </h3>
+
+                <p class="project-description">
+                    SaaS invoicing platform designed to address
+                    the needs of restaurant businesses.
+                </p>
+
+            </div>
+
+            <div class="project-tech">
+                SaaS · Strategy · Product
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    Wmobil
+                </h3>
+
+                <p class="project-description">
+                    Software solution connecting restaurant
+                    operations with SoftRestaurant POS systems.
+                </p>
+
+            </div>
+
+            <div class="project-tech">
+                APIs · Technology
+            </div>
+
+        </div>
+
+    </section>
+
 
 
     <!-- ABOUT -->
 
     <section id="about" class="about">
 
-        <h2 class="section-title">
-            A little <span>about me</span>
-        </h2>
-
-        <p class="about-text">
-            I work at the intersection of business, technology, and analytics.
-            My experience in project management and software development has
-            shaped my interest in using data to solve business problems,
-            improve decision-making, and create better products.
+        <p class="label">
+            ABOUT ME
         </p>
 
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section id="work">
-
         <h2 class="section-title">
-            Selected <span>work</span>
+            Business + technology + analytics.
         </h2>
 
-        <div class="projects">
+        <div class="about-content">
 
-            <div class="project">
+            <p>
+                My background combines strategic management,
+                finance, entrepreneurship, and software development.
+            </p>
 
-                <p class="project-number">01</p>
-
-                <h3>VotoMétrica</h3>
-
-                <p>
-                    Electoral data analytics project using Python to transform
-                    data into meaningful insights.
-                </p>
-
-            </div>
-
-
-            <div class="project">
-
-                <p class="project-number">02</p>
-
-                <h3>WFacturas</h3>
-
-                <p>
-                    SaaS invoicing platform created to address the needs of
-                    restaurant businesses.
-                </p>
-
-            </div>
-
-
-            <div class="project">
-
-                <p class="project-number">03</p>
-
-                <h3>Wmobil</h3>
-
-                <p>
-                    Software solution connecting restaurant operations with
-                    SoftRestaurant POS systems.
-                </p>
-
-            </div>
+            <p>
+                Through project management and technology,
+                I have worked on translating business needs into
+                practical digital solutions. I am now expanding
+                that foundation through my Master of Management
+                in Analytics at McGill University.
+            </p>
 
         </div>
 
     </section>
 
 
-    <!-- CONTACT -->
 
-    <section id="contact" class="contact">
+    <!-- TOOLBOX -->
 
-        <h2 class="section-title">
-            Let's <span>connect</span>
-        </h2>
+    <section class="toolbox">
 
-        <p>
-            Interested in analytics, strategy, technology, or just want to say hi?
+        <p class="label">
+            TOOLBOX
         </p>
 
-        <a href="https://www.linkedin.com/in/dianaolivan/"
-           target="_blank">
-            LinkedIn
-        </a>
+        <h2 class="section-title">
+            Things I work with.
+        </h2>
 
-        <a href="https://github.com/dianaolig8"
-           target="_blank">
-            GitHub
-        </a>
+
+        <div class="skills">
+
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Pandas</span>
+            <span class="skill">Excel</span>
+            <span class="skill">Data Analysis</span>
+            <span class="skill">Business Analysis</span>
+            <span class="skill">Project Management</span>
+            <span class="skill">API Integration</span>
+            <span class="skill">Git</span>
+
+        </div>
 
     </section>
 
 
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <p class="label">
+            GET IN TOUCH
+        </p>
+
+        <h2>
+            Let's connect.
+        </h2>
+
+        <p>
+            Interested in analytics, strategy, technology,
+            or just want to say hi?
+        </p>
+
+        <div class="contact-links">
+
+            <a
+                href="https://www.linkedin.com/in/dianaolivan/"
+                target="_blank"
+            >
+                LinkedIn ↗
+            </a>
+
+            <a
+                href="https://github.com/dianaolig8"
+                target="_blank"
+            >
+                GitHub ↗
+            </a>
+
+        </div>
+
+    </section>
+
+
+
     <footer>
+
         © 2026 Diana Olivan
+
     </footer>
 
+
 </body>
+
 </html>
