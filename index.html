@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Diana Olivan | Business Analytics</title>
+    <title>Diana Olivan | Business, Analytics & Impact</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
 
         :root {
-            --dark: #20283A;
-            --accent: #D97967;
-            --cream: #FAF7F2;
-            --light: #F0EBE5;
-            --muted: #737887;
+            --forest: #29483D;
+            --forest-light: #47675B;
+            --sage: #8FA58F;
+            --blue: #49677A;
+            --blue-light: #DCE6E8;
+            --brown: #8B6F5A;
+            --brown-light: #DCCDC0;
+            --cream: #F7F3EC;
+            --cream-dark: #EEE8DD;
             --white: #FFFFFF;
+            --text: #29332F;
+            --muted: #69736F;
+            --border: #DDD8CF;
         }
 
         * {
@@ -29,355 +40,542 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: "DM Sans", sans-serif;
             background: var(--cream);
-            color: var(--dark);
-            line-height: 1.6;
+            color: var(--text);
+            line-height: 1.7;
         }
 
-
-        /* NAVIGATION */
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            padding: 25px 7%;
-
-            position: sticky;
-            top: 0;
-
-            background: rgba(250, 247, 242, 0.95);
-
-            backdrop-filter: blur(10px);
-
-            z-index: 100;
+            background: rgba(247, 243, 236, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(221, 216, 207, 0.7);
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 21px;
-            font-weight: bold;
+            font-family: "Playfair Display", serif;
+            font-size: 23px;
+            font-weight: 600;
+            color: var(--forest);
         }
 
         .logo span {
-            color: var(--accent);
+            color: var(--brown);
         }
 
         nav ul {
+            list-style: none;
             display: flex;
             gap: 30px;
-            list-style: none;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--dark);
-            font-size: 14px;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 500;
+            transition: 0.2s;
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--forest);
         }
 
-
-        /* GENERAL */
+        /* =========================
+           GENERAL
+        ========================= */
 
         section {
-            max-width: 1100px;
+            padding: 120px 8%;
+            max-width: 1200px;
             margin: auto;
-            padding: 100px 7%;
         }
 
-        .label {
-            color: var(--accent);
+        .section-label {
+            color: var(--brown);
             font-size: 12px;
-            font-weight: bold;
+            font-weight: 700;
             letter-spacing: 2px;
-            margin-bottom: 18px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
         .section-title {
-            font-size: 38px;
-            margin-bottom: 35px;
+            font-family: "Playfair Display", serif;
+            font-size: 46px;
+            line-height: 1.15;
+            color: var(--forest);
+            margin-bottom: 45px;
         }
 
+        /* =========================
+           HERO
+        ========================= */
 
-        /* HERO */
-
-        .hero {
-            min-height: 82vh;
-
+        #home {
+            min-height: 100vh;
+            padding: 150px 8% 100px;
             display: flex;
             align-items: center;
-
             position: relative;
+            overflow: hidden;
         }
 
-        .hero-content {
+        .hero {
             max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
+            color: var(--brown);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            margin-bottom: 22px;
         }
 
         .hero h1 {
-            font-size: clamp(55px, 9vw, 105px);
-            line-height: 0.95;
-            letter-spacing: -4px;
-            margin-bottom: 30px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(60px, 9vw, 105px);
+            line-height: 0.98;
+            color: var(--forest);
+            margin-bottom: 28px;
         }
 
         .hero h1 span {
-            color: var(--accent);
+            color: var(--brown);
         }
 
         .hero h2 {
             font-size: 25px;
-            font-weight: normal;
+            line-height: 1.4;
+            font-weight: 500;
+            color: var(--blue);
             max-width: 650px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .hero-description {
             color: var(--muted);
-            max-width: 600px;
             font-size: 17px;
-            margin-bottom: 30px;
+            max-width: 650px;
+            margin-bottom: 35px;
         }
 
         .buttons {
             display: flex;
-            gap: 12px;
+            gap: 14px;
         }
 
         .button {
             display: inline-block;
-
-            padding: 12px 22px;
-
-            border-radius: 5px;
-
+            padding: 13px 24px;
+            border-radius: 30px;
             text-decoration: none;
-
             font-size: 14px;
-
-            transition: 0.2s;
+            font-weight: 600;
+            transition: 0.25s;
         }
 
-        .primary {
-            background: var(--accent);
+        .button-primary {
+            background: var(--forest);
             color: white;
         }
 
-        .primary:hover {
+        .button-primary:hover {
+            background: var(--forest-light);
             transform: translateY(-2px);
-            opacity: 0.9;
         }
 
-        .secondary {
-            border: 1px solid var(--dark);
-            color: var(--dark);
+        .button-secondary {
+            border: 1px solid var(--forest);
+            color: var(--forest);
         }
 
-        .secondary:hover {
-            background: var(--dark);
+        .button-secondary:hover {
+            background: var(--forest);
             color: white;
         }
 
+        /* Decorative shapes */
 
-        /* INTRO / STATS */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
 
-        .intro {
-            background: var(--dark);
-            color: white;
+        .shape-one {
+            width: 430px;
+            height: 430px;
+            background: var(--blue-light);
+            right: -130px;
+            top: 130px;
+        }
 
+        .shape-two {
+            width: 190px;
+            height: 190px;
+            background: var(--brown-light);
+            right: 220px;
+            bottom: 70px;
+        }
+
+        .shape-three {
+            width: 80px;
+            height: 80px;
+            background: var(--sage);
+            opacity: 0.7;
+            right: 80px;
+            bottom: 90px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        #about {
             max-width: none;
-
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-
-            gap: 60px;
-
-            padding-left: 12%;
-            padding-right: 12%;
-        }
-
-        .intro-text {
-            font-size: 25px;
-            line-height: 1.4;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .stat-number {
-            font-size: 32px;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .stat-label {
-            color: #D4D7DE;
-            font-size: 13px;
-        }
-
-
-        /* WORK */
-
-        .work {
-            background: var(--cream);
-        }
-
-        .project {
-            display: grid;
-
-            grid-template-columns: 80px 1fr 180px;
-
-            gap: 25px;
-
-            align-items: start;
-
-            padding: 30px 0;
-
-            border-top: 1px solid #DCD6CF;
-        }
-
-        .project:last-child {
-            border-bottom: 1px solid #DCD6CF;
-        }
-
-        .project-number {
-            color: var(--accent);
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .project h3 {
-            font-size: 25px;
-            margin-bottom: 6px;
-        }
-
-        .project-description {
-            color: var(--muted);
-            max-width: 600px;
-        }
-
-        .project-tech {
-            color: var(--accent);
-            font-size: 12px;
-            font-weight: bold;
-            text-align: right;
-        }
-
-
-        /* ABOUT */
-
-        .about {
             background: var(--white);
-            max-width: none;
+        }
 
-            padding-left: 12%;
-            padding-right: 12%;
+        .about-wrapper {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.5fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .about-heading {
+            font-family: "Playfair Display", serif;
+            font-size: 38px;
+            line-height: 1.25;
+            color: var(--forest);
         }
 
         .about-content {
-            max-width: 750px;
-
-            font-size: 19px;
-
             color: var(--muted);
+            font-size: 17px;
         }
 
         .about-content p {
             margin-bottom: 20px;
         }
 
+        .highlight {
+            color: var(--forest);
+            font-weight: 600;
+        }
 
-        /* TOOLBOX */
+        /* =========================
+           WHAT DRIVES ME
+        ========================= */
 
-        .toolbox {
-            background: var(--light);
+        #drives {
+            background: var(--forest);
             max-width: none;
-
-            padding-left: 12%;
-            padding-right: 12%;
+            color: white;
         }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+        .drives-wrapper {
+            max-width: 1050px;
+            margin: auto;
         }
 
-        .skill {
-            padding: 9px 15px;
-
-            background: var(--white);
-
-            border-radius: 30px;
-
-            font-size: 14px;
-
-            color: var(--dark);
+        #drives .section-label {
+            color: var(--brown-light);
         }
 
-
-        /* CONTACT */
-
-        .contact {
-            text-align: center;
-            max-width: 800px;
+        #drives .section-title {
+            color: var(--cream);
+            max-width: 650px;
         }
 
-        .contact h2 {
-            font-size: 50px;
+        .drives-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.18);
+        }
+
+        .drive-item {
+            padding: 38px;
+            background: var(--forest);
+            min-height: 190px;
+        }
+
+        .drive-number {
+            color: var(--brown-light);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .drive-item h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 26px;
+            color: var(--cream);
+            margin-bottom: 10px;
+        }
+
+        .drive-item p {
+            color: #C9D2CD;
+            font-size: 15px;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 45px;
+            padding: 35px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .experience-date {
+            color: var(--brown);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .experience-item h3 {
+            font-family: "Playfair Display", serif;
+            color: var(--forest);
+            font-size: 27px;
+            margin-bottom: 3px;
+        }
+
+        .experience-company {
+            color: var(--blue);
+            font-weight: 600;
             margin-bottom: 15px;
         }
 
-        .contact p {
+        .experience-item ul {
+            padding-left: 20px;
             color: var(--muted);
-            margin-bottom: 25px;
+        }
+
+        .experience-item li {
+            margin-bottom: 6px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        #skills {
+            background: var(--cream-dark);
+            max-width: none;
+        }
+
+        .skills-wrapper {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 28px 24px;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        .skill-icon {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            color: var(--forest);
+            font-family: "Playfair Display", serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 35px;
+            border-radius: 5px;
+            min-height: 260px;
+            transition: 0.25s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(41, 72, 61, 0.09);
+        }
+
+        .project-number {
+            color: var(--brown);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-family: "Playfair Display", serif;
+            color: var(--forest);
+            font-size: 29px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .technologies {
+            color: var(--blue) !important;
+            font-weight: 600;
+            font-size: 12px !important;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        #education {
+            background: var(--white);
+            max-width: none;
+        }
+
+        .education-wrapper {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .education-item h3 {
+            font-family: "Playfair Display", serif;
+            color: var(--forest);
+            font-size: 23px;
+        }
+
+        .education-item p {
+            color: var(--muted);
+            text-align: right;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #contact {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        #contact .section-title {
+            margin-bottom: 20px;
+        }
+
+        #contact .section-title::after {
+            content: "";
+            display: block;
+            width: 45px;
+            height: 3px;
+            background: var(--brown);
+            margin: 18px auto 0;
+        }
+
+        .contact-description {
+            color: var(--muted);
+            font-size: 17px;
+            max-width: 600px;
+            margin: 0 auto 30px;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
         }
 
         .contact-links a {
-            color: var(--dark);
+            color: var(--forest);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
+            border-bottom: 2px solid var(--brown-light);
+            padding-bottom: 4px;
+            transition: 0.2s;
         }
 
         .contact-links a:hover {
-            color: var(--accent);
+            color: var(--brown);
+            border-color: var(--brown);
         }
 
-
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
+            background: #20382F;
+            color: #BFCBC5;
             text-align: center;
-
-            padding: 25px;
-
-            background: var(--dark);
-
-            color: #C9CDD5;
-
+            padding: 28px;
             font-size: 12px;
         }
 
+        /* =========================
+           MOBILE
+        ========================= */
 
-        /* MOBILE */
-
-        @media (max-width: 700px) {
+        @media (max-width: 800px) {
 
             nav {
-                padding: 20px 6%;
+                padding: 16px 5%;
             }
 
             nav ul {
@@ -385,57 +583,83 @@
             }
 
             nav a {
-                font-size: 12px;
+                font-size: 11px;
             }
 
             section {
-                padding: 75px 7%;
+                padding: 85px 6%;
             }
 
             .hero h1 {
                 font-size: 60px;
-                letter-spacing: -2px;
             }
 
             .hero h2 {
                 font-size: 21px;
             }
 
-            .intro {
+            .shape-one {
+                width: 280px;
+                height: 280px;
+                right: -130px;
+            }
+
+            .about-wrapper {
                 grid-template-columns: 1fr;
-
-                padding-left: 7%;
-                padding-right: 7%;
+                gap: 30px;
             }
 
-            .project {
-                grid-template-columns: 45px 1fr;
+            .drives-grid {
+                grid-template-columns: 1fr;
             }
 
-            .project-tech {
-                grid-column: 2;
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .education-item {
+                display: block;
+            }
+
+            .education-item p {
                 text-align: left;
+                margin-top: 5px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            nav ul {
+                display: none;
             }
 
-            .about,
-            .toolbox {
-                padding-left: 7%;
-                padding-right: 7%;
+            .hero h1 {
+                font-size: 48px;
             }
 
-            .contact h2 {
-                font-size: 40px;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
 
+            .buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
 
     </style>
-
 </head>
 
-
 <body>
-
 
     <!-- NAVIGATION -->
 
@@ -446,33 +670,28 @@
         </div>
 
         <ul>
-
-            <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#work">Work</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-
+            <li><a href="#about">About</a></li>
+            <li><a href="#drives">What Drives Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
 
     </nav>
 
 
-
     <!-- HERO -->
 
-    <section class="hero">
+    <section id="home">
 
-        <div class="hero-content">
+        <div class="shape shape-one"></div>
+        <div class="shape shape-two"></div>
+        <div class="shape shape-three"></div>
 
-            <p class="label">
-                BUSINESS ANALYTICS · STRATEGY · TECHNOLOGY
+        <div class="hero">
+
+            <p class="hero-label">
+                BUSINESS · ANALYTICS · TECHNOLOGY · IMPACT
             </p>
 
             <h1>
@@ -481,29 +700,25 @@
             </h1>
 
             <h2>
-                I connect business strategy, technology,
-                and analytics to solve complex problems.
+                Where business strategy, technology, and impact meet.
             </h2>
 
             <p class="hero-description">
-                Business professional with a background in strategic
-                management, finance, entrepreneurship, and technology,
-                currently pursuing a Master of Management in Analytics
-                at McGill University.
+                Business professional passionate about entrepreneurship,
+                social and environmental impact, and using data and technology
+                to turn ideas into meaningful solutions.
             </p>
 
             <div class="buttons">
 
-                <a href="#work" class="button primary">
-                    View my work
+                <a href="#projects" class="button button-primary">
+                    Explore my work
                 </a>
 
-                <a
-                    href="https://www.linkedin.com/in/dianaolivan/"
-                    target="_blank"
-                    class="button secondary"
-                >
-                    LinkedIn ↗
+                <a href="https://www.linkedin.com/in/dianaolivan/"
+                   target="_blank"
+                   class="button button-secondary">
+                    LinkedIn
                 </a>
 
             </div>
@@ -511,270 +726,447 @@
         </div>
 
     </section>
-
-
-
-    <!-- INTRO -->
-
-    <section class="intro">
-
-        <div class="intro-text">
-
-            I enjoy working where <strong>business,
-            technology, and data</strong> overlap —
-            turning ideas and problems into practical solutions.
-
-        </div>
-
-
-        <div class="stats">
-
-            <div>
-
-                <div class="stat-number">
-                    5+
-                </div>
-
-                <div class="stat-label">
-                    Years of experience
-                </div>
-
-            </div>
-
-
-            <div>
-
-                <div class="stat-number">
-                    3
-                </div>
-
-                <div class="stat-label">
-                    Technology projects
-                </div>
-
-            </div>
-
-
-            <div>
-
-                <div class="stat-number">
-                    MMA
-                </div>
-
-                <div class="stat-label">
-                    McGill University
-                </div>
-
-            </div>
-
-
-            <div>
-
-                <div class="stat-number">
-                    3
-                </div>
-
-                <div class="stat-label">
-                    Core areas
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- WORK -->
-
-    <section id="work" class="work">
-
-        <p class="label">
-            SELECTED WORK
-        </p>
-
-        <h2 class="section-title">
-            Projects
-        </h2>
-
-
-        <div class="project">
-
-            <div class="project-number">
-                01
-            </div>
-
-            <div>
-
-                <h3>
-                    VotoMétrica
-                </h3>
-
-                <p class="project-description">
-                    Electoral data analytics project focused on
-                    transforming data into meaningful insights.
-                </p>
-
-            </div>
-
-            <div class="project-tech">
-                Python · Data Analysis
-            </div>
-
-        </div>
-
-
-        <div class="project">
-
-            <div class="project-number">
-                02
-            </div>
-
-            <div>
-
-                <h3>
-                    WFacturas
-                </h3>
-
-                <p class="project-description">
-                    SaaS invoicing platform designed to address
-                    the needs of restaurant businesses.
-                </p>
-
-            </div>
-
-            <div class="project-tech">
-                SaaS · Strategy · Product
-            </div>
-
-        </div>
-
-
-        <div class="project">
-
-            <div class="project-number">
-                03
-            </div>
-
-            <div>
-
-                <h3>
-                    Wmobil
-                </h3>
-
-                <p class="project-description">
-                    Software solution connecting restaurant
-                    operations with SoftRestaurant POS systems.
-                </p>
-
-            </div>
-
-            <div class="project-tech">
-                APIs · Technology
-            </div>
-
-        </div>
-
-    </section>
-
 
 
     <!-- ABOUT -->
 
-    <section id="about" class="about">
+    <section id="about">
 
-        <p class="label">
-            ABOUT ME
-        </p>
+        <div class="about-wrapper">
 
-        <h2 class="section-title">
-            Business + technology + analytics.
-        </h2>
+            <div>
+                <p class="section-label">A little about me</p>
 
-        <div class="about-content">
+                <h2 class="about-heading">
+                    Business is more than numbers.
+                </h2>
+            </div>
 
-            <p>
-                My background combines strategic management,
-                finance, entrepreneurship, and software development.
-            </p>
+            <div class="about-content">
 
-            <p>
-                Through project management and technology,
-                I have worked on translating business needs into
-                practical digital solutions. I am now expanding
-                that foundation through my Master of Management
-                in Analytics at McGill University.
-            </p>
+                <p>
+                    My experience has taken me across
+                    <span class="highlight">
+                        entrepreneurship, technology, and social and environmental impact.
+                    </span>
+                    I am passionate about building and supporting initiatives
+                    that create value not only for businesses, but also for
+                    the communities and environments around them.
+                </p>
+
+                <p>
+                    With a background in strategic management and finance,
+                    experience managing technology projects, and now a
+                    Master of Management in Analytics at McGill University,
+                    I am interested in the intersection of
+                    <span class="highlight">
+                        business strategy, data, technology, and impact.
+                    </span>
+                </p>
+
+                <p>
+                    I enjoy turning ideas into action — whether that's
+                    developing a new venture, designing a technology solution,
+                    analyzing data, or working on initiatives that aim to
+                    create positive social or environmental change.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHAT DRIVES ME -->
+
+    <section id="drives">
+
+        <div class="drives-wrapper">
+
+            <p class="section-label">What drives me</p>
+
+            <h2 class="section-title">
+                The things I care about beyond the job title.
+            </h2>
+
+            <div class="drives-grid">
+
+                <div class="drive-item">
+
+                    <p class="drive-number">01</p>
+
+                    <h3>Entrepreneurship</h3>
+
+                    <p>
+                        I love turning ideas into action, building new
+                        initiatives, and finding creative ways to solve
+                        real-world problems.
+                    </p>
+
+                </div>
+
+
+                <div class="drive-item">
+
+                    <p class="drive-number">02</p>
+
+                    <h3>Social Impact</h3>
+
+                    <p>
+                        I am passionate about initiatives that use business,
+                        innovation, and technology to create positive outcomes
+                        for people and communities.
+                    </p>
+
+                </div>
+
+
+                <div class="drive-item">
+
+                    <p class="drive-number">03</p>
+
+                    <h3>Environmental Impact</h3>
+
+                    <p>
+                        I care about building solutions that consider
+                        sustainability and the long-term impact of business
+                        decisions on our environment.
+                    </p>
+
+                </div>
+
+
+                <div class="drive-item">
+
+                    <p class="drive-number">04</p>
+
+                    <h3>Analytics & Technology</h3>
+
+                    <p>
+                        I enjoy using data and technology to understand
+                        complex problems, make better decisions, and turn
+                        ideas into scalable solutions.
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
     </section>
 
 
+    <!-- EXPERIENCE -->
 
-    <!-- TOOLBOX -->
+    <section id="experience">
 
-    <section class="toolbox">
-
-        <p class="label">
-            TOOLBOX
-        </p>
+        <p class="section-label">My experience</p>
 
         <h2 class="section-title">
-            Things I work with.
+            Building, managing & creating.
         </h2>
 
 
-        <div class="skills">
+        <div class="experience-item">
 
-            <span class="skill">Python</span>
-            <span class="skill">SQL</span>
-            <span class="skill">Pandas</span>
-            <span class="skill">Excel</span>
-            <span class="skill">Data Analysis</span>
-            <span class="skill">Business Analysis</span>
-            <span class="skill">Project Management</span>
-            <span class="skill">API Integration</span>
-            <span class="skill">Git</span>
+            <div class="experience-date">
+                2024 — 2026
+            </div>
+
+            <div>
+
+                <h3>Project Manager</h3>
+
+                <p class="experience-company">
+                    Inowu Development
+                </p>
+
+                <ul>
+
+                    <li>
+                        Managed and coordinated software development projects,
+                        ensuring high-quality results.
+                    </li>
+
+                    <li>
+                        Documented requirements through flowcharts and detailed
+                        functional specifications.
+                    </li>
+
+                    <li>
+                        Developed business proposals and custom technology
+                        solutions tailored to client needs.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-date">
+                2022 — 2023
+            </div>
+
+            <div>
+
+                <h3>Project Manager</h3>
+
+                <p class="experience-company">
+                    New Ventures Group
+                </p>
+
+                <p style="color: #69736F;">
+                    Entrepreneurship, innovation, and venture development.
+                </p>
+
+            </div>
 
         </div>
 
     </section>
 
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="skills-wrapper">
+
+            <p class="section-label">What I bring</p>
+
+            <h2 class="section-title">
+                A mix of business, technology & analytics.
+            </h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">◌</div>
+
+                    <h3>Analytics</h3>
+
+                    <p>
+                        Python · SQL · Pandas · Statistics ·
+                        Data Analysis · Visualization
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">↗</div>
+
+                    <h3>Strategy</h3>
+
+                    <p>
+                        Strategic Management · Finance ·
+                        Business Analysis · Digital Transformation
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">⌘</div>
+
+                    <h3>Technology</h3>
+
+                    <p>
+                        Software Development · API Integrations ·
+                        ERP / CRM · Product Development
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">✦</div>
+
+                    <h3>Entrepreneurship</h3>
+
+                    <p>
+                        Venture Development · Innovation ·
+                        Project Management · Impact
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <p class="section-label">Selected work</p>
+
+        <h2 class="section-title">
+            Ideas turned into projects.
+        </h2>
+
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+
+                <p class="project-number">01 — DATA</p>
+
+                <h3>VotoMétrica</h3>
+
+                <p>
+                    Data analytics project focused on analyzing electoral
+                    information and generating insights from data.
+                </p>
+
+                <p class="technologies">
+                    Python · Data Analysis · Visualization
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <p class="project-number">02 — ENTREPRENEURSHIP</p>
+
+                <h3>WFacturas</h3>
+
+                <p>
+                    SaaS invoicing platform for restaurants, combining
+                    technology, business needs, and product development.
+                </p>
+
+                <p class="technologies">
+                    SaaS · Business Analysis · Product Development
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <p class="project-number">03 — TECHNOLOGY</p>
+
+                <h3>Wmobil</h3>
+
+                <p>
+                    Technology solution connecting restaurant operations
+                    with SoftRestaurant POS systems through integrations.
+                </p>
+
+                <p class="technologies">
+                    API Integration · Software · Product
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="education-wrapper">
+
+            <p class="section-label">Education</p>
+
+            <h2 class="section-title">
+                Always learning.
+            </h2>
+
+
+            <div class="education-item">
+
+                <div>
+
+                    <h3>
+                        Master of Management in Analytics
+                    </h3>
+
+                    <p>
+                        McGill University
+                    </p>
+
+                </div>
+
+                <p>
+                    2026 — 2027
+                </p>
+
+            </div>
+
+
+            <div class="education-item">
+
+                <div>
+
+                    <h3>
+                        BBA in Strategic Management
+                    </h3>
+
+                    <p>
+                        Finance Major · Innovative Entrepreneurship Minor
+                        <br>
+                        Tecnológico de Monterrey
+                    </p>
+
+                </div>
+
+                <p>
+                    2021
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
     <!-- CONTACT -->
 
-    <section id="contact" class="contact">
+    <section id="contact">
 
-        <p class="label">
-            GET IN TOUCH
-        </p>
+        <p class="section-label">Get in touch</p>
 
-        <h2>
-            Let's connect.
+        <h2 class="section-title">
+            Let's build something meaningful.
         </h2>
 
-        <p>
-            Interested in analytics, strategy, technology,
-            or just want to say hi?
+        <p class="contact-description">
+            I am always interested in conversations around analytics,
+            entrepreneurship, technology, innovation, and creating
+            positive impact.
         </p>
 
         <div class="contact-links">
 
-            <a
-                href="https://www.linkedin.com/in/dianaolivan/"
-                target="_blank"
-            >
-                LinkedIn ↗
+            <a href="https://www.linkedin.com/in/dianaolivan/"
+               target="_blank">
+                LinkedIn
             </a>
 
-            <a
-                href="https://github.com/dianaolig8"
-                target="_blank"
-            >
-                GitHub ↗
+            <a href="https://github.com/dianaolig8"
+               target="_blank">
+                GitHub
             </a>
 
         </div>
@@ -782,14 +1174,12 @@
     </section>
 
 
+    <!-- FOOTER -->
 
     <footer>
-
-        © 2026 Diana Olivan
-
+        © 2026 Diana Olivan · Business · Analytics · Technology · Impact
     </footer>
 
 
 </body>
-
 </html>
