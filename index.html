@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diana Oliván</title>
 <meta name="description" content="Diana Oliván: analytics and product. MMA student at McGill. Projects written as short product briefs.">
-<meta name="theme-color" content="#1F4E5F">
+<meta name="theme-color" content="#2B45A6">
 <link rel="preload" href="fonts/young-serif.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/schibsted.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -13,11 +13,11 @@
   @font-face{font-family:"Schibsted";src:url(fonts/schibsted.woff2) format("woff2");font-weight:400 900;font-display:swap}
 
   :root{
-    --petroleo:#1F4E5F;   /* petrol blue: hero, headings */
+    --petroleo:#2B45A6;   /* petrol blue: hero, headings */
     --tinta:#16242B;      /* text */
-    --piedra:#ECEAE4;     /* warm stone background */
-    --papel:#F7F6F2;      /* brief surface */
-    --ocre:#9A6B1E;       /* earth accent: results */
+    --piedra:#F0ECE3;     /* warm stone background */
+    --papel:#FAF8F3;      /* brief surface */
+    --ocre:#A86A12;       /* earth accent: results */
     --olivo:#5E6B3F;      /* earth secondary: status */
     --gris:#5B666B;       /* muted text */
     --linea:#D6D2C8;
@@ -35,14 +35,14 @@
   /* hero: the cover page of a spec */
   .portada{background:var(--petroleo);color:#EEF2F1;padding:4.5rem 0 3rem}
   .portada a{color:#fff}
-  .doc{font:500 .9rem/1 var(--sans);color:#A9C1C6;margin:0 0 1.1rem}
+  .doc{font:500 .9rem/1 var(--sans);color:#B9C4EC;margin:0 0 1.1rem}
   h1{font:400 clamp(3rem,10vw,5.2rem)/.95 var(--serif);letter-spacing:-.015em;margin:0 0 1.6rem;color:#fff}
   .resumen{font-size:1.25rem;line-height:1.5;max-width:36rem;margin:0 0 2.2rem;color:#E4ECEB}
   .meta{display:grid;grid-template-columns:8.5rem 1fr;gap:.55rem 1rem;margin:0;padding:1.4rem 0 0;border-top:1px solid #ffffff2e;font-size:.98rem}
-  .meta dt{color:#A9C1C6}
+  .meta dt{color:#B9C4EC}
   .meta dd{margin:0}
   .abierta{display:inline-flex;align-items:center;gap:.5rem}
-  .abierta::before{content:"";flex:none;width:.5rem;height:.5rem;border-radius:50%;background:#C9D68F}
+  .abierta::before{content:"";flex:none;width:.5rem;height:.5rem;border-radius:50%;background:#F2C46D}
   .meta .links a{margin-right:1.1rem}
 
   /* sections */
@@ -80,6 +80,27 @@
   footer{margin-top:5rem;border-top:1px solid var(--linea);padding:2rem 0 3rem;color:var(--gris);font-size:.95rem}
   footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
+
+  /* desktop: use the width */
+  @media (min-width:960px){
+    body{font-size:1.125rem}
+    .wrap{max-width:74rem;padding:0 3rem}
+    .portada{padding:5.5rem 0 4.5rem}
+    .portada .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:4rem;align-items:end}
+    .portada .meta{border-top:0;border-left:1px solid #ffffff2e;padding:0 0 0 2.5rem;grid-template-columns:7rem 1fr}
+    .resumen{margin-bottom:0}
+    .head-sec{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:end;margin-bottom:2rem}
+    .head-sec h2{font-size:2.1rem;margin:0}
+    .head-sec .intro{margin:0}
+    .briefs{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch}
+    .brief{margin:0}
+    .briefs .brief:first-child{grid-column:1/-1;padding:2rem 2.2rem}
+    .briefs .brief:first-child h3{font-size:1.4rem}
+    .briefs .brief:first-child .campos{grid-template-columns:8rem 1fr;max-width:52rem}
+    .dos{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem}
+    .dos > section{padding-top:4.5rem}
+  }
+
   @media (max-width:600px){
     .portada{padding-top:3rem}
     .resumen{font-size:1.12rem}
@@ -94,9 +115,11 @@
 
 <header class="portada">
   <div class="wrap">
-    <p class="doc">Product brief, last updated Nov 2026</p>
-    <h1>Diana Oliván</h1>
-    <p class="resumen">I work between business and tech teams. I find out what people actually need, turn it into something a team can build, and measure whether it worked.</p>
+    <div>
+      <p class="doc">Product brief, last updated Nov 2026</p>
+      <h1>Diana Oliván</h1>
+      <p class="resumen">I work between business and tech teams. I find out what people actually need, turn it into something a team can build, and measure whether it worked.</p>
+    </div>
     <dl class="meta">
       <dt>Now</dt><dd>Master of Management in Analytics, McGill</dd>
       <dt>Before</dt><dd>Almost five years managing software products and impact programs in Mexico</dd>
@@ -110,8 +133,11 @@
 <main class="wrap">
 
   <section aria-labelledby="h-briefs">
-    <h2 id="h-briefs">Projects, written as briefs</h2>
-    <p class="intro">I spent years writing requirements for other people's products, so here are mine in the same format: the problem, who it's for, what I did and what happened.</p>
+    <div class="head-sec">
+      <h2 id="h-briefs">Projects, written as briefs</h2>
+      <p class="intro">I spent years writing requirements for other people's products, so here are mine in the same format: the problem, who it's for, what I did and what happened.</p>
+    </div>
+    <div class="briefs">
 
     <article class="brief">
       <header><h3>Can a start-of-term survey predict student depression?</h3><span class="cuando">Fall 2026</span></header>
@@ -163,8 +189,10 @@
         <dt>Result</dt><dd class="resultado">Recognized as one of Shell LiveWIRE's top implementing partners across 18 countries</dd>
       </dl>
     </article>
+    </div>
   </section>
 
+  <div class="dos">
   <section aria-labelledby="h-changelog">
     <h2 id="h-changelog">Changelog</h2>
     <p class="intro">My career, newest release first.</p>
@@ -197,6 +225,7 @@
     </ol>
   </section>
 
+  <div>
   <section aria-labelledby="h-voz">
     <h2 id="h-voz">Talks and workshops</h2>
     <ul class="lista">
@@ -209,6 +238,8 @@
     <h2 id="h-afuera">Outside work</h2>
     <p class="afuera">I run 10Ks, foster rescue dogs, go to classical concerts and read Latin American novels. I work in Spanish, English and French.</p>
   </section>
+  </div>
+  </div>
 
 </main>
 
